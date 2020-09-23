@@ -1,40 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rberthau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/18 12:49:37 by rberthau          #+#    #+#             */
-/*   Updated: 2020/09/21 22:40:14 by rberthau         ###   ########.fr       */
+/*   Created: 2020/09/22 16:22:48 by rberthau          #+#    #+#             */
+/*   Updated: 2020/09/23 12:01:36 by rberthau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include <stdlib.h>
 
-void	ft_putstr(char *str)
+int	*ft_range(int min, int max)
 {
+	int	*tab;
 	int i;
+	int j;
 
-	i = 0;
-	while (str[i])
+	i = max - min + 1;
+	if (min >= max)
 	{
-		write(1, &str[i], 1);
-		i++;
+		tab = NULL;
+		return (tab);
 	}
-}
-
-int		main(int argc, char **argv)
-{
-	int i;
-
-	i = 1;
-	while (i < argc)
+	if (!(tab = (int*)malloc(sizeof(*tab) * i)))
+		return (NULL);
+	j = 0;
+	while (min < max)
 	{
-		ft_putstr(argv[i]);
-		write(1, "\n", 1);
-		i++;
+		tab[j] = min;
+		min++;
+		j++;
 	}
-	return (0);
+	tab[j] = '\0';
+	return (tab);
 }

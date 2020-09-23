@@ -1,40 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rberthau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/18 12:49:37 by rberthau          #+#    #+#             */
-/*   Updated: 2020/09/21 22:40:14 by rberthau         ###   ########.fr       */
+/*   Created: 2020/09/22 14:27:39 by rberthau          #+#    #+#             */
+/*   Updated: 2020/09/22 15:42:09 by rberthau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include <stdlib.h>
 
-void	ft_putstr(char *str)
+char	*ft_strdup(char *src)
 {
-	int i;
-
+	int 	i;
+	int 	j;
+	char 	*dest;
+	
 	i = 0;
-	while (str[i])
+	while (src[i])
 	{
-		write(1, &str[i], 1);
 		i++;
 	}
-}
-
-int		main(int argc, char **argv)
-{
-	int i;
-
-	i = 1;
-	while (i < argc)
+	dest = (char*)malloc(sizeof(*src) * i + 1);
+	if (!(dest))
+		return (0);
+	j = 0;
+	while (j <= i)
 	{
-		ft_putstr(argv[i]);
-		write(1, "\n", 1);
-		i++;
+		dest[j] = src[j];
+		j++;
 	}
-	return (0);
+	dest[j] = '\0';
+	return (dest);
 }

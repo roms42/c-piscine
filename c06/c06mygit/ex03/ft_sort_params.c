@@ -6,7 +6,7 @@
 /*   By: rberthau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/18 13:39:46 by rberthau          #+#    #+#             */
-/*   Updated: 2020/09/18 15:11:33 by rberthau         ###   ########.fr       */
+/*   Updated: 2020/09/21 22:36:59 by rberthau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_putstr(char *str)
 	}
 }
 
-int	ft_strcmp(char *str1, char *str2)
+int		ft_strcmp(char *str1, char *str2)
 {
 	while (*str1 && *str2 && *str1 == *str2)
 	{
@@ -35,13 +35,13 @@ int	ft_strcmp(char *str1, char *str2)
 	return (*str1 - *str2);
 }
 
-void ft_sort(int size ,char **tb)
+void	ft_sort(int size, char **tb)
 {
-	int i;
-	int j;
-	char *tmp;
+	int		i;
+	int		j;
+	char	*tmp;
 
-	i = 0;
+	i = 1;
 	while (i < size)
 	{
 		j = i + 1;
@@ -59,7 +59,7 @@ void ft_sort(int size ,char **tb)
 	}
 }
 
-int main(int argc, char **argv)
+int		main(int argc, char **argv)
 {
 	int i;
 

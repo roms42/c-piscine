@@ -6,7 +6,7 @@
 /*   By: rberthau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/18 13:31:53 by rberthau          #+#    #+#             */
-/*   Updated: 2020/09/18 14:33:13 by rberthau         ###   ########.fr       */
+/*   Updated: 2020/09/21 22:40:37 by rberthau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_putstr(char *str)
 	}
 }
 
-int main(int argc, char **argv)
+int		main(int argc, char **argv)
 {
 	int i;
 
