@@ -6,7 +6,7 @@
 /*   By: rberthau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/22 16:22:48 by rberthau          #+#    #+#             */
-/*   Updated: 2020/09/23 12:01:36 by rberthau         ###   ########.fr       */
+/*   Updated: 2020/09/24 22:56:15 by rberthau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,8 @@ int	*ft_range(int min, int max)
 	int i;
 	int j;
 
-	i = max - min + 1;
-	if (min >= max)
-	{
-		tab = NULL;
-		return (tab);
-	}
-	if (!(tab = (int*)malloc(sizeof(*tab) * i)))
+	i = max - min;
+	if (!(tab = (int*)malloc(sizeof(*tab) * i)) || min >= max)
 		return (NULL);
 	j = 0;
 	while (min < max)
@@ -33,6 +28,5 @@ int	*ft_range(int min, int max)
 		min++;
 		j++;
 	}
-	tab[j] = '\0';
 	return (tab);
 }
