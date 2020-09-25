@@ -6,7 +6,7 @@
 /*   By: rberthau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/22 15:29:56 by rberthau          #+#    #+#             */
-/*   Updated: 2020/09/23 12:31:36 by rberthau         ###   ########.fr       */
+/*   Updated: 2020/09/25 11:43:46 by rberthau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,24 @@ int main(int argc, char **argv)
 
 	//ex03
 	char **strs;
-	strs = argv[1];
-	ft_strjoin(argc, strs...)
-
-	
+	strs = NULL;
+	int i = 0;
+	strs = (char**)malloc(sizeof(char*) * 5);
+	while (i < 5)
+	{
+		strs[i] = (char*)malloc(sizeof(char) * 30);
+		i++;
+	}
+	strs[0] = "bonjour";
+	strs[1] = "je";
+	strs[2] = "mappelle";
+	strs[3] = "romain";
+	strs[4] = 0;
+	i = 0;
+	while (i < 4)
+	{
+		printf("%s\n", strs[i]);
+		i++;
+	}
+	printf("dest = %s\n", ft_strjoin( 4, strs, " "));
 }
