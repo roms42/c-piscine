@@ -6,17 +6,14 @@
 /*   By: rberthau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 20:44:55 by rberthau          #+#    #+#             */
-/*   Updated: 2020/09/24 22:33:47 by rberthau         ###   ########.fr       */
+/*   Updated: 2020/09/26 10:45:18 by rberthau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stock_str.h"
 #include <unistd.h>
 
-struct s_stock_str *ft_strs_to_tab(int ac, char **av);
-int	ft_strlen(char *str);
-
-void	ft_putstr(char *str)
+void				ft_putstr(char *str)
 {
 	int i;
 
@@ -28,12 +25,12 @@ void	ft_putstr(char *str)
 	}
 }
 
-void	ft_putchar(char c)
+void				ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
-void	ft_putnbr(int nb)
+void				ft_putnbr(int nb)
 {
 	long i;
 
@@ -52,7 +49,7 @@ void	ft_putnbr(int nb)
 		ft_putchar(i + '0');
 }
 
-void	ft_show_tab(struct s_stock_str *par)
+void				ft_show_tab(struct s_stock_str *par)
 {
 	int i;
 
@@ -67,11 +64,4 @@ void	ft_show_tab(struct s_stock_str *par)
 		write(1, "\n", 1);
 		i++;
 	}
-}
-
-int main(int ac, char **av)
-{
-	t_stock_str	*stock;
-	stock = ft_strs_to_tab(ac, av);
-	ft_show_tab(stock);
 }
