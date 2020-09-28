@@ -6,7 +6,7 @@
 /*   By: rberthau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/23 12:33:16 by rberthau          #+#    #+#             */
-/*   Updated: 2020/09/25 13:25:33 by rberthau         ###   ########.fr       */
+/*   Updated: 2020/09/28 16:32:03 by rberthau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,15 +60,15 @@ void	ft_putnbr_base(int nbr, char *base, char *dest)
 
 void	ft_str_rev(char *dest)
 {
-	char tmp;
-	int i;
-	int destlen;
+	char	tmp;
+	int		i;
+	int		destlen;
 
 	destlen = ft_strlen(dest);
 	i = 0;
 	if (destlen > 0)
 	{
-		while(i < destlen / 2)
+		while (i < destlen / 2)
 		{
 			tmp = dest[i];
 			dest[i] = dest[destlen - 1 - i];
@@ -78,7 +78,7 @@ void	ft_str_rev(char *dest)
 	}
 }
 
-int	ft_sizeofdest(int nb, int btolen)
+int		ft_sizeofdest(int nb, int btolen)
 {
 	int k;
 	int i;
@@ -104,17 +104,17 @@ int	ft_sizeofdest(int nb, int btolen)
 
 char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 {
-	char *dest;
-	int j;
-	int btolen;
-	int nb;
+	char	*dest;
+	int		j;
+	int		btolen;
+	int		nb;
 
 	if (!(ft_checkbase(base_from)) || !(ft_checkbase(base_to)))
 		return (NULL);
 	nb = ft_atoi_base(nbr, base_from);
 	btolen = ft_strlen(base_to);
 	j = ft_sizeofdest(nb, btolen);
-	if(!(dest = (char*)malloc(sizeof(char*) * (j + 1))))
+	if (!(dest = (char*)malloc(sizeof(char*) * (j + 1))))
 		return (NULL);
 	ft_putnbr_base(nb, base_to, dest);
 	if (nb < 0)

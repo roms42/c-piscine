@@ -6,7 +6,7 @@
 /*   By: rberthau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/22 15:29:56 by rberthau          #+#    #+#             */
-/*   Updated: 2020/09/25 11:43:46 by rberthau         ###   ########.fr       */
+/*   Updated: 2020/09/28 16:38:18 by rberthau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,31 @@ int main(int argc, char **argv)
 		i++;
 	}
 	printf("dest = %s\n", ft_strjoin( 4, strs, " "));
+
+	//ex03
+	char *dest;
+	char *strs[3];
+
+	strs[0] = "1";
+	strs[1] = "2";
+	strs[2] = "3";
+	dest = ft_strjoin(3, strs, "");
+	printf("dest finale =%s\n", dest);
+
+	//ex05
+	#include <stdio.h>
+int		main()
+{
+	char **tab;
+	int i;
+
+	i = 0;
+	tab = ft_split("boooonjour les copains holakkk", "oa");
+	while (tab[i])
+	{
+		printf("%s\n", tab[i]);
+		i++;
+	}
+}
+
 }
