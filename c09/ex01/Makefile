@@ -1,4 +1,5 @@
-SRCS		= ./srcs/ft_putchar.c ./srcs/ft_strcmp.c ./srcs/ft_swap.c ./srcs/ft_putstr.c ./srcs/ft_strlen.c
+SRCS		= ./srcs/ft_putchar.c ./srcs/ft_strcmp.c ./srcs/ft_swap.c \
+			  ./srcs/ft_putstr.c ./srcs/ft_strlen.c
 
 HEADERS		= ./includes/
 
@@ -15,10 +16,11 @@ CC			= gcc
 RM			= rm -f
 
 .c.o:
-			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+			${CC} ${CFLAGS} -I ${HEADERS} -c $< -o ${<:.c=.o}
 			
 ${NAME}:	${OBJS}
 			ar rc ${NAME} ${OBJS}
+			ranlib ${NAME}
 
 all:		${NAME}
 
