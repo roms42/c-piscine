@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_count_if.c                                      :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rberthau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/28 22:38:07 by rberthau          #+#    #+#             */
-/*   Updated: 2020/09/29 12:43:17 by rberthau         ###   ########.fr       */
+/*   Created: 2020/09/30 00:12:31 by rberthau          #+#    #+#             */
+/*   Updated: 2020/09/30 00:12:42 by rberthau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_count_if(char **tab, int length, int(*f)(char*))
-{
-	int i;
-	int k;
+#include <unistd.h>
 
-	i = 0;
-	k = 0;
-	while (i < length)
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void	ft_putnbr(int nb)
+{
+	long i;
+
+	i = nb;
+	if (i < 0)
 	{
-		if ((*f)(tab[i]))
-			k++;
-		i++;
+		i = -i;
+		ft_putchar('-');
 	}
-	return (k);
+	if (i >= 10)
+	{
+		ft_putnbr(i / 10);
+		ft_putnbr(i % 10);
+	}
+	else
+		ft_putchar(i + '0');
 }

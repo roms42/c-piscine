@@ -1,27 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_count_if.c                                      :+:      :+:    :+:   */
+/*   ops.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rberthau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/28 22:38:07 by rberthau          #+#    #+#             */
-/*   Updated: 2020/09/29 12:43:17 by rberthau         ###   ########.fr       */
+/*   Created: 2020/09/29 15:42:24 by rberthau          #+#    #+#             */
+/*   Updated: 2020/09/30 00:06:37 by rberthau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_count_if(char **tab, int length, int(*f)(char*))
+int	ft_plus(int a, int b)
 {
-	int i;
-	int k;
+	int res;
 
-	i = 0;
-	k = 0;
-	while (i < length)
-	{
-		if ((*f)(tab[i]))
-			k++;
-		i++;
-	}
-	return (k);
+	res = a + b;
+	return (res);
+}
+
+int ft_minus(int a, int b)
+{
+	int res;
+
+	res = a - b;
+	return (res);
+}
+
+int ft_div(int a, int b)
+{
+	int res;
+	
+	res = a / b;
+	return (res);
+}
+
+int ft_mod(int a, int b)
+{
+	int res;
+
+	res = a % b;
+	return (res);
 }

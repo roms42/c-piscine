@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_count_if.c                                      :+:      :+:    :+:   */
+/*   ft_is_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rberthau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/28 22:38:07 by rberthau          #+#    #+#             */
-/*   Updated: 2020/09/29 12:43:17 by rberthau         ###   ########.fr       */
+/*   Created: 2020/09/29 15:20:36 by rberthau          #+#    #+#             */
+/*   Updated: 2020/09/29 15:36:49 by rberthau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_count_if(char **tab, int length, int(*f)(char*))
+int	ft_is_sort(int *tab, int length, int(*f)(int, int))
 {
 	int i;
-	int k;
+	int result;
+	int cmp;
 
 	i = 0;
-	k = 0;
-	while (i < length)
+	result = (*f)(tab[i], tab[i + 1]);
+	i++;
+	while (i++ < length - 1)
 	{
-		if ((*f)(tab[i]))
-			k++;
-		i++;
+		cmp = (*f)(tab[i], tab[i + 1]);
+		if (cmp != result && cmp != 0)
+			return (0);
 	}
-	return (k);
+	return (1);
 }
