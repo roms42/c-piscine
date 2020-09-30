@@ -6,7 +6,7 @@
 /*   By: rberthau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 15:42:24 by rberthau          #+#    #+#             */
-/*   Updated: 2020/09/30 00:06:37 by rberthau         ###   ########.fr       */
+/*   Updated: 2020/09/30 11:14:04 by rberthau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,3 +41,12 @@ int ft_mod(int a, int b)
 	res = a % b;
 	return (res);
 }
+
+int ft_times(int a, int b)
+{
+	int res;
+
+	res = a * b;
+	return (res);
+}
+
