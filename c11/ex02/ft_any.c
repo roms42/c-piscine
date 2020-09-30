@@ -6,11 +6,11 @@
 /*   By: rberthau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 22:28:00 by rberthau          #+#    #+#             */
-/*   Updated: 2020/09/28 22:37:00 by rberthau         ###   ########.fr       */
+/*   Updated: 2020/09/30 17:20:20 by rberthau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_any(char **tab, int(*f)(char*))
+int	ft_any(char **tab, int (*f)(char*))
 {
 	int i;
 	int k;
