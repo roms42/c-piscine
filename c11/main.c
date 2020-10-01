@@ -6,7 +6,7 @@
 /*   By: rberthau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 17:05:53 by rberthau          #+#    #+#             */
-/*   Updated: 2020/09/30 20:58:31 by rberthau         ###   ########.fr       */
+/*   Updated: 2020/10/01 11:13:30 by rberthau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -189,6 +189,52 @@ int main(int ac, char **av)
 	int a = ac;
 	while (ac--)
 		printf("%s\n", av[a - ac -1]);
+}
+
+
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+	char **av;
+
+	av = malloc(sizeof(char*) * 18);
+	int i;
+	i = 0;
+	while (i < 17)
+	{
+		av[i] = malloc(sizeof(char) * 15);
+		i++;
+	}
+	av[i] = malloc(sizeof(char) * 1);
+
+	av[0] = "7JGBA6kSMa4";
+	av[1] = "l";
+	av[2] = "s";
+	av[3] = "ucd8xv";
+	av[4] = "5I8c4odv";
+	av[5] = "P";
+	av[6] = "T";
+	av[7] = "Rvnc9GDH";
+	av[8] = "Fdt";
+	av[9] = "JqiVG";
+	av[10] = "ziA8";
+	av[11] = "6Gzge";
+	av[12] = "dQRjkMO";
+	av[13] = "3raw";
+	av[14] = "sdA76";
+	av[15] = "P";
+	av[16] = "g";
+	av[17] = 0;
+
+
+	ft_sort_string_tab(av);
+	i = 0;
+	while (av[i])
+	{
+		printf("%s\n", av[i]);
+		i++;
+	}
 }
 
 //EX07
